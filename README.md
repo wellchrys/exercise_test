@@ -103,6 +103,13 @@ query FindBook($id: ID!) {
     book_number_of_pages
     book_published_at
     book_description
+    students {
+      id
+      student_name
+      student_last_name
+      student_email
+      student_date_of_birth
+    }
   }
 }
 ```
@@ -117,6 +124,13 @@ query FindStudent($id: ID!) {
     student_last_name
     student_email
     student_date_of_birth
+    books {
+      id
+      book_name
+      book_number_of_pages
+      book_published_at
+      book_description
+    }
   }
 }
 ```
