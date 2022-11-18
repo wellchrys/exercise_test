@@ -28,16 +28,13 @@ const destroy = async (id) => {
 };
 
 const find = async (id) => {
-  const student = await Student.findOne({
+  const student = await db.student.findOne({
     where: { id },
-    // include: [{
-    //   model: Checkout,
-    //   required: true,
-    //   include: [{
-    //     model: Book,
-    //     required: true,
-    //   }]
-    // }]
+    include: [{
+      model: db.book,
+      required: true,
+      as: 'books'
+    }]
   });
 
   if (student === null) {

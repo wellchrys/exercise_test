@@ -26,7 +26,7 @@ const schema = buildSchema(`
     student_last_name: String!
     student_email: String!
     student_date_of_birth: String
-    checkout: Checkout
+    books: [Book]
   }
 
   type Book {
@@ -35,7 +35,7 @@ const schema = buildSchema(`
     book_number_of_pages: Int!
     book_published_at: String!
     book_description: String
-    checkout: Checkout
+    students: [Student]
   }
 
   type Checkout {

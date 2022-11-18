@@ -24,7 +24,7 @@ const Student = (sequelize, DataTypes) => {
   }, { underscored: true, tableName: 'students' });
 
   student.associate = (models) => {
-    student.belongsToMany(models.book, { as: 'BookInStudent', through: models.checkout, foreignKey: 'student_id'});
+    student.belongsToMany(models.book, { as: 'books', through: models.checkout, foreignKey: 'student_id'});
   }
 
   return student;
